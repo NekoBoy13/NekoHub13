@@ -1,0 +1,108 @@
+body{
+    font-family: cursive;
+    margin: 9px;
+    padding: 0;
+    background-color: #0d0d0d;
+    color: #fff;
+}
+
+header{
+    background: #00bcd4;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 17px 14px rgba(0, 188, 212, 0.5);
+    border: 4px  transparent; /* Чтобы указать тип рамки */  
+    border-radius: 39px; /* Здесь указывайте радиус по своему вкусу */
+}
+nav ul{
+    list-style-type: none;
+    padding: 0;
+}
+
+nav ul li{
+    display: inline;
+    margin: 0 1px;
+}
+nav a{
+    color: #fff;
+    text-decoration:none;
+    transition: color 0.3s;
+}
+
+nav a:hover{
+    color: #79239d;
+}
+
+main{
+    padding: 20px;
+}
+
+p {line-height: 1.5em;}
+
+article img {
+/*убедитесь, что размер больших изображений изменен таким образом, чтобы они уместились в публикации*/
+    max-width: 100%;
+}
+
+.timestamp {
+    font-weight: normal;
+    font-size: smaller;
+    margin: .2em;
+/*это удерживает его на нужном краю*/
+    float: right;
+}
+
+.post-header {
+    color: aquamarine;
+    font-weight: bold;
+    padding: .5rem 0;
+    border-bottom: 4px double #3afff1;
+}
+
+.gallery img, .video-gallery video {
+    width: 250px;
+    border: 3px solid #00bcd4;
+    border-radius: 10px;
+    transition: transform 0.3s;
+}
+
+.gallery img:hover, .video-gallery video:hover {
+    transform: scale(1.03)
+}
+
+.posts article {
+    background: rgba(0, 188, 212, 0.2);
+    border: 2px solid #00bcd4;
+    border-radius: 9px;
+    padding: 14px;
+    margin-bottom: 32px;
+    transition: transform 0.3s;
+}
+
+.posts article:hover{
+    transform: scale(1.03)
+}
+
+iframe {  
+    width: 97%; 
+    height: 324px; 
+    margin-top: 23px; 
+    padding: 10px;
+    border: 3px solid #04404e;
+    border-radius: 10px;
+    background: #00bcd4;
+}  
+
+footer{
+    text-align: center;
+    padding: 20px 0;
+    background: #00bcd4;
+    color: #fff;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    box-shadow: 0 -16px 12px rgba(0, 188, 212, 0.5);
+    border: 4px transparent; /* Чтобы указать тип рамки */  
+    border-radius: 32px; /* Здесь указывайте радиус по своему вкусу */
+}
