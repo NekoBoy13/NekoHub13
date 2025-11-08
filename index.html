@@ -5,6 +5,44 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>NekoHub</title>
         <link rel="stylesheet" href="styles.css" />
+		<style>
+  /* Новогодние украшения */
+  .snowflake {
+    position: fixed;
+    top: -10px;
+    color: white;
+    font-size: 1em;
+    animation: fall linear forwards;
+    z-index: 9999;
+    pointer-events: none;
+  }
+  
+  @keyframes fall {
+    to {
+      transform: translateY(100vh) rotate(360deg);
+      opacity: 0;
+    }
+  }
+  
+  /* Новогодние огоньки */
+  .christmas-lights {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 15px;
+    background: linear-gradient(90deg, 
+      #ff0000, #00ff00, #0000ff, #ffff00, #ff00ff, #00ffff);
+    background-size: 200% 100%;
+    animation: lights 2s linear infinite;
+    z-index: 9998;
+  }
+  
+  @keyframes lights {
+    0% { background-position: 0% 50%; }
+    100% { background-position: 200% 50%; }
+  }
+</style>
     </head>
     <body>
         <header>
@@ -80,14 +118,12 @@
                         <p>ฅ^•ﻌ•^ฅ С любовью, ваш Неко! ฅ^•ﻌ•^ฅ</p>
                     </article>
                 </div>
-                <p style="color: aquamarine; margin-bottom: 2px;">*Памятка: Комментарии, сразу не видны, так как Некобойчик, сам своими лапками фильтрирует коментарии и даёт разрешение для их показа ฅ^•ﻌ•^ฅ</p>
-                <iframe src="https://komments.cloud/eb1c152ac7f8d36876d878" title="Блок коментариев" width="429" height="699"></iframe>
+<!--                 <p style="color: aquamarine; margin-bottom: 2px;">*Памятка: Комментарии, сразу не видны, так как Некобойчик, сам своими лапками фильтрирует коментарии и даёт разрешение для их показа ฅ^•ﻌ•^ฅ</p>
+                <iframe src="https://komments.cloud/eb1c152ac7f8d36876d878" title="Блок коментариев" width="429" height="699"></iframe> -->
             </section>
         </main>
         <footer>
             <p>&copy; 2025 NekoHub. все права защищеныю</p>
-            <img src="neocities.png" alt="neocities" 
-                 style="width: 110px; float: left; margin-left: 31px;"><br>
         </footer>
         <script src="script.js"></script>
     </body>
