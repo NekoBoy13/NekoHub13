@@ -1,57 +1,224 @@
-// Создание снежинок
-function createSnowflake() {
-    const snowflake = document.createElement('div');
-    snowflake.classList.add('snowflake');
-    snowflake.innerHTML = '❄';
-    snowflake.style.left = Math.random() * 100 + 'vw';
-    snowflake.style.animationDuration = Math.random() * 3 + 2 + 's';
-    snowflake.style.opacity = Math.random() * 0.6 + 0.4;
-    snowflake.style.fontSize = Math.random() * 10 + 10 + 'px';
-    
-    document.body.appendChild(snowflake);
-    
-    setTimeout(() => {
-        snowflake.remove();
-    }, 5000);
+/* Новогодняя тема */
+body {
+    font-family: cursive;
+    margin: 9px;
+    padding: 0;
+    background: linear-gradient(135deg, #0d2b1a 0%, #1a472a 50%, #0d0d0d 100%);
+    color: #fff;
+    position: relative;
+    overflow-x: hidden;
 }
 
-// Создание новогодних огоньков
-function createChristmasLights() {
-    const lights = document.createElement('div');
-    lights.classList.add('christmas-lights');
-    document.body.appendChild(lights);
+/* Новогодний узор фона */
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: 
+        radial-gradient(circle at 10% 20%, rgba(255, 215, 0, 0.1) 0%, transparent 2%),
+        radial-gradient(circle at 90% 80%, rgba(255, 0, 0, 0.1) 0%, transparent 2%),
+        radial-gradient(circle at 50% 50%, rgba(0, 255, 0, 0.05) 0%, transparent 4%);
+    background-size: 300px 300px;
+    z-index: -1;
 }
 
-// Запуск новогодних эффектов
-document.addEventListener('DOMContentLoaded', function() {
-    // Создаем огоньки
-    createChristmasLights();
-    
-    // Создаем снежинки каждые 100ms
-    setInterval(createSnowflake, 100);
-    
-    // Новогоднее приветствие в консоли
-    console.log('🎄 С Новым Годом от NekoHub! 🎅');
-    
-    // Добавляем новогодний звук при клике (опционально)
-    document.addEventListener('click', function() {
-        // Можно добавить звук колокольчиков или новогодней музыки
-    });
-});
-
-// Новогодний таймер
-function updateNewYearTimer() {
-    const now = new Date();
-    const newYear = new Date(now.getFullYear() + 1, 0, 1);
-    const diff = newYear - now;
-    
-    const days = Math.floor(diff / (1000 * 60 * 60 * 24));
-    const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-    const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
-    const seconds = Math.floor((diff % (1000 * 60)) / 1000);
-    
-    console.log(`🎄 До Нового ${newYear.getFullYear()} года: ${days}д ${hours}ч ${minutes}м ${seconds}с 🎅`);
+header {
+    background: linear-gradient(135deg, #b30000 0%, #ff4d4d 50%, #b30000 100%);
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 17px 14px rgba(179, 0, 0, 0.5);
+    border: 4px solid #ffd700;
+    border-radius: 39px;
+    position: relative;
+    overflow: hidden;
 }
 
-// Обновляем таймер каждую секунду
-setInterval(updateNewYearTimer, 1000);
+/* Новогодние украшения для header */
+header::before {
+    content: "🎄✨";
+    position: absolute;
+    left: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 1.5em;
+}
+
+header::after {
+    content: "✨🎄";
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 1.5em;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+nav a {
+    color: #ffd700;
+    text-decoration: none;
+    transition: all 0.3s;
+    font-weight: bold;
+    text-shadow: 0 0 5px rgba(255, 215, 0, 0.5);
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+nav a:hover {
+    color: #ffffff;
+    background: rgba(255, 215, 0, 0.3);
+    transform: scale(1.1);
+}
+
+main {
+    padding: 20px;
+}
+
+p {
+    line-height: 1.5em;
+}
+
+article img {
+    max-width: 100%;
+}
+
+.timestamp {
+    font-weight: normal;
+    font-size: smaller;
+    margin: .2em;
+    float: right;
+    color: #ffd700;
+}
+
+.post-header {
+    color: #ffd700;
+    font-weight: bold;
+    padding: .5rem 0;
+    border-bottom: 4px double #ff6b6b;
+    text-shadow: 0 0 3px rgba(255, 215, 0, 0.5);
+}
+
+.gallery img, .video-gallery video {
+    width: 250px;
+    border: 3px solid #ff6b6b;
+    border-radius: 10px;
+    transition: all 0.3s;
+    box-shadow: 0 0 10px rgba(255, 107, 107, 0.3);
+}
+
+.gallery img:hover, .video-gallery video:hover {
+    transform: scale(1.03);
+    border-color: #ffd700;
+    box-shadow: 0 0 15px rgba(255, 215, 0, 0.5);
+}
+
+.posts article {
+    background: linear-gradient(135deg, rgba(179, 0, 0, 0.2) 0%, rgba(255, 215, 0, 0.1) 100%);
+    border: 2px solid #ff6b6b;
+    border-radius: 9px;
+    padding: 14px;
+    margin-bottom: 32px;
+    transition: all 0.3s;
+    position: relative;
+}
+
+.posts article::before {
+    content: "🎁";
+    position: absolute;
+    top: -10px;
+    left: -10px;
+    font-size: 1.2em;
+    background: #b30000;
+    border-radius: 50%;
+    width: 25px;
+    height: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.posts article:hover {
+    transform: scale(1.02);
+    border-color: #ffd700;
+    box-shadow: 0 0 20px rgba(255, 215, 0, 0.3);
+}
+
+iframe {
+    width: 97%;
+    height: 324px;
+    margin-top: 23px;
+    padding: 10px;
+    border: 3px solid #ff6b6b;
+    border-radius: 10px;
+    background: linear-gradient(135deg, #b30000 0%, #ff4d4d 100%);
+}
+
+footer {
+    text-align: center;
+    padding: 20px 0;
+    background: linear-gradient(135deg, #b30000 0%, #ff4d4d 50%, #b30000 100%);
+    color: #ffd700;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    box-shadow: 0 -16px 12px rgba(179, 0, 0, 0.5);
+    border: 4px solid #ffd700;
+    border-radius: 32px;
+    font-weight: bold;
+}
+
+/* Новогодние элементы в секциях */
+h1, h2 {
+    color: #ffd700;
+    text-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+    position: relative;
+}
+
+h1::after {
+    content: " 🎅";
+}
+
+h1::before {
+    content: "🎅 ";
+}
+
+h2::before {
+    content: "🎄 ";
+}
+
+#photos h2::after {
+    content: " 📸";
+}
+
+#videos h2::after {
+    content: " 🎥";
+}
+
+#posts h2::after {
+    content: " 📝";
+}
+
+/* Адаптивность для мобильных устройств */
+@media (max-width: 768px) {
+    header::before,
+    header::after {
+        display: none;
+    }
+    
+    nav ul li {
+        display: block;
+        margin: 10px 0;
+    }
+}
